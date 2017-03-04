@@ -54,6 +54,10 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RGiesecke.DllExport.Metadata, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8f52d83c1a22df51, processorArchitecture=MSIL">
+      <HintPath>..\packages\UnmanagedExports.1.2.7\lib\net\RGiesecke.DllExport.Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,8 +67,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManagedWrapper\EnumerationsManager.cs" />
+    <Compile Include="ManagedWrapper\Utils.cs" />
+    <Compile Include="VirtualFilesystem\DirectoryEntryBase.cs" />
+    <Compile Include="VirtualFilesystem\EmptyDirectoryEntry.cs" />
+    <Compile Include="VirtualFilesystem\FileEntryBase.cs" />
+    <Compile Include="VirtualFilesystem\FilesystemEntry.cs" />
+    <Compile Include="ManagedWrapper\PluginFactory.cs" />
+    <Compile Include="ManagedWrapper\WfxManagedWrapper.cs" />
+    <Compile Include="VirtualFilesystem\SimpleDirectoryEntry.cs" />
+    <Compile Include="VirtualFilesystem\VirtualFilesystemUtils.cs" />
+    <Compile Include="WfxApi\WfxApiExports.Mandatory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WfxPluginBase.cs" />
+    <Compile Include="WinApi\ErrorCodes.cs" />
+    <Compile Include="WinApi\Handles.cs" />
+    <Compile Include="WinApi\Kernel32Functions.cs" />
+    <Compile Include="WinApi\WIN32_FIND_DATA.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if $(PlatformName) == x86 move "$(TargetPath)" "$(TargetDir)..\$(TargetName).wfx"
@@ -74,4 +98,5 @@ if $(PlatformName) == x64 move "$(TargetPath)" "$(TargetDir)..\$(TargetName).wfx
   <Target Name="AfterBuild">
     <MSBuild Condition=" '$(Platform)' == 'x86' " Projects="$(MSBuildProjectFile)" Properties="Platform=x64;PlatFormTarget=x64" RunEachTargetSeparately="true" />
   </Target>
+  <Import Project="../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets" Condition="Exists('../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets')" />
 </Project>
