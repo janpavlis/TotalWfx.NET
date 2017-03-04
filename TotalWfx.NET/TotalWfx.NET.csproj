@@ -91,8 +91,8 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if $(PlatformName) == x86 move "$(TargetPath)" "$(TargetDir)..\$(TargetName).wfx"
-if $(PlatformName) == x64 move "$(TargetPath)" "$(TargetDir)..\$(TargetName).wfx64"
+    <PostBuildEvent>if $(PlatformName) == x86 copy "$(TargetPath)" "$(TargetDir)..\$(TargetName).wfx"
+if $(PlatformName) == x64 copy "$(TargetPath)" "$(TargetDir)..\$(TargetName).wfx64"
 </PostBuildEvent>
   </PropertyGroup>
   <Target Name="AfterBuild">
