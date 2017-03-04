@@ -21,13 +21,13 @@ namespace Hopsoft.TotalCommander.TotalWfx
         internal int PluginNr { get; set; }
 
         ///// <summary>
-        ///// When overriden in derive class, gets name of plugin as will appear
+        ///// When overridden in derive class, gets name of plugin as will appear
         ///// in Total Commander under "Network Neighborhood".
         ///// </summary>
         //public virtual string PluginName => null;
 
         /// <summary>
-        /// When overriden in derived class
+        /// When overridden in derived class
         /// </summary>
         /// <returns></returns>
         public abstract DirectoryEntryBase GetRootDirectoryEntry();

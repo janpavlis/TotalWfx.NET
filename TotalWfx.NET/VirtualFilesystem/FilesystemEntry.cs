@@ -14,7 +14,7 @@ namespace Hopsoft.TotalCommander.TotalWfx.VirtualFilesystem
         public abstract string Name { get; protected set; }
 
         /// <summary>
-        /// When overriden in derived class, creates WIN32_FIND_DATA_ANSI
+        /// When overridden in derived class, creates WIN32_FIND_DATA_ANSI
         /// structure filled with informations from this instance.
         /// </summary>
         internal WIN32_FIND_DATA_ANSI ToFindDataAnsi()
