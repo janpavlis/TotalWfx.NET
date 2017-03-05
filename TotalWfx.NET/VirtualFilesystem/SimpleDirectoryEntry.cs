@@ -17,6 +17,7 @@ namespace Hopsoft.TotalCommander.TotalWfx.VirtualFilesystem
         public SimpleDirectoryEntry(string name, IEnumerable<FilesystemEntry> childFilesystemEntries)
         {
             VirtualFilesystemUtils.CheckFilesystemEntryName(name);
+            Name = name;
             m_ChildFilesystemEntries = childFilesystemEntries?.ToArray() ?? new FilesystemEntry[0];
         }
 
