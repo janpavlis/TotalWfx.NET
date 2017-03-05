@@ -77,8 +77,10 @@
     <Compile Include="ManagedWrapper\WfxManagedWrapper.cs" />
     <Compile Include="VirtualFilesystem\SimpleDirectoryEntry.cs" />
     <Compile Include="VirtualFilesystem\VirtualFilesystemUtils.cs" />
+    <Compile Include="WfxApi\MarshallingUtils.cs" />
     <Compile Include="WfxApi\WfxApiExports.Mandatory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WfxApi\WfxApiExports.Optional.cs" />
     <Compile Include="WfxPluginBase.cs" />
     <Compile Include="WinApi\ErrorCodes.cs" />
     <Compile Include="WinApi\Handles.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Hopsoft.TotalCommander.TotalWfx.VirtualFilesystem;
@@ -98,6 +99,11 @@ namespace Hopsoft.TotalCommander.TotalWfx.ManagedWrapper
             {
                 return 0;
             }
+        }
+
+        internal string GetDefRootName()
+        {
+            return m_Plugin.GetRootDirectoryEntry().Name;
         }
 
         #endregion
